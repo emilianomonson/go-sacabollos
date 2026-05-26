@@ -1,0 +1,31 @@
+<section class="faq-section" id="faq">
+  <div class="container">
+    
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">PREGUNTAS <span class="highlight">FRECUENTES</span></h2>
+      <p class="section-subtitle">Resolvé tus dudas sobre nuestra metodología de trabajo.</p>
+    </div>
+
+    <div class="faq-container">
+      
+      <div class="faq-item" *ngFor="let item of faqs; let i = index" 
+           [class.active]="item.abierta" 
+           (click)="toggleFaq(i)"
+           data-aos="fade-up" 
+           [attr.data-aos-delay]="(i + 1) * 100">
+        
+        <div class="faq-pregunta">
+          <h3>{{ item.pregunta }}</h3>
+          <i class="fa-solid fa-chevron-down icon-arrow"></i>
+        </div>
+        
+        <div class="faq-respuesta" [class.show]="item.abierta">
+          <p>{{ item.respuesta }}</p>
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+</section>

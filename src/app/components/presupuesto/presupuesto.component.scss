@@ -1,0 +1,167 @@
+.presupuesto-section {
+  padding: 120px 0;
+  background-color: var(--bg-dark);
+  position: relative;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px; /* Un poco más angosto para el formulario */
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+
+  .highlight {
+    color: var(--accent-red);
+  }
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.form-container {
+  background-color: var(--bg-card);
+  padding: 50px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.form-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  input, select, textarea {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    padding: 15px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent-red);
+      box-shadow: 0 0 10px rgba(230, 0, 0, 0.2);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+  }
+}
+
+/* Estilos para el botón de adjuntar archivos */
+.file-upload {
+  input[type="file"] {
+    display: none;
+  }
+
+  .file-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+    font-weight: normal;
+
+    &:hover {
+      background-color: rgba(230, 0, 0, 0.05);
+      border-color: var(--accent-red);
+      color: var(--accent-red);
+    }
+  }
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  background-color: var(--accent-red);
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+
+  &:hover {
+    background-color: var(--accent-red-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
+  }
+}
+
+/* Responsividad estricta para celulares */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .btn-submit {
+    max-width: 100%;
+  }
+}

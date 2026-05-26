@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="nav-container">
+    
+    <div class="logo-container">
+      <a href="#inicio" (click)="closeMenu()">
+        <img src="/logo.png" alt="GO Sacabollos" class="nav-logo">
+      </a>
+    </div>
+
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="isMenuOpen" aria-label="Abrir menú">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <ul class="nav-links" [class.open]="isMenuOpen">
+      <li><a href="#inicio" (click)="closeMenu()">INICIO</a></li>
+      <li><a href="#servicios" (click)="closeMenu()">SERVICIOS</a></li>
+      <li><a href="#trabajos" (click)="closeMenu()">TRABAJOS</a></li>
+      <li><a href="#presupuesto" (click)="closeMenu()">PRESUPUESTO</a></li>
+      <li class="mobile-only">
+        <a href="#presupuesto" class="btn-nav-cita" (click)="closeMenu()">PEDIR TURNO</a>
+      </li>
+    </ul>
+
+    <div class="nav-actions desktop-only">
+      <a href="#presupuesto" class="btn-nav-cita">PEDIR TURNO</a>
+    </div>
+
+  </div>
+</nav>

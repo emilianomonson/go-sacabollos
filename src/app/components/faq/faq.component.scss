@@ -1,0 +1,122 @@
+.faq-section {
+  padding: 120px 0;
+  background-color: #0d0d0d;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px; /* Más angosto para facilitar la lectura técnica */
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+
+  .highlight {
+    color: var(--accent-red);
+  }
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.faq-item {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(230, 0, 0, 0.3);
+    background-color: rgba(20, 20, 20, 1);
+  }
+
+  &.active {
+    border-color: var(--accent-red);
+    box-shadow: 0 5px 20px rgba(230, 0, 0, 0.1);
+
+    .icon-arrow {
+      transform: rotate(180deg);
+      color: var(--accent-red);
+    }
+  }
+}
+
+.faq-pregunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+  
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0;
+    padding-right: 20px;
+  }
+
+  .icon-arrow {
+    color: var(--text-muted);
+    transition: transform 0.4s ease, color 0.3s ease;
+    font-size: 1.2rem;
+  }
+}
+
+/* Sistema moderno para animar el acordeón sin max-height estricto */
+.faq-respuesta {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-in-out;
+  padding: 0 30px;
+
+  &.show {
+    grid-template-rows: 1fr;
+  }
+
+  p {
+    overflow: hidden;
+    margin: 0;
+    /* Padding interior para separar el texto del borde inferior cuando está abierto */
+    padding-bottom: 25px; 
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsividad ajustada */
+@media (max-width: 768px) {
+  .faq-pregunta {
+    padding: 20px;
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  
+  .faq-respuesta {
+    padding: 0 20px;
+    p {
+      padding-bottom: 20px;
+    }
+  }
+}

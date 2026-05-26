@@ -1,0 +1,203 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* Mantenemos tu imagen de fondo original */
+  background-image: url('/fondo-hero2.png'); /* Ajustá la ruta o nombre según tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 50%, rgba(10,10,10,0.4) 100%);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 85px; /* Compensa el Navbar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+/* --- COLUMNA IZQUIERDA (TEXTO) --- */
+.hero-text-col {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  letter-spacing: 2px;
+  
+  .highlight {
+    color: var(--accent-red);
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+}
+
+.btn-solid-red {
+  padding: 15px 35px;
+  background-color: var(--accent-red);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: var(--accent-red-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(230, 0, 0, 0.3);
+  }
+}
+
+.btn-outline {
+  padding: 15px 35px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* --- COLUMNA DERECHA (VIDEO REEL) --- */
+.hero-media-col {
+  flex: 0 0 320px; /* Ancho fijo para mantener la proporción tipo Reel */
+  display: flex;
+  justify-content: center;
+}
+
+.hero-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(230, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Animación sutil de flotación */
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Para que no salgan los controles en PC */
+}
+
+/* Adornos futuristas en las esquinas */
+.video-accent {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+  
+  &.top-left {
+    top: 15px;
+    left: 15px;
+    border-top: 3px solid var(--accent-red);
+    border-left: 3px solid var(--accent-red);
+  }
+  
+  &.bottom-right {
+    bottom: 15px;
+    right: 15px;
+    border-bottom: 3px solid var(--accent-red);
+    border-right: 3px solid var(--accent-red);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- RESPONSIVIDAD (MÓVILES) --- */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 0;
+    gap: 40px;
+  }
+  
+  .hero-overlay {
+    /* En celular oscurecemos todo parejo para que se lea bien centrado */
+    background: rgba(10, 10, 10, 0.85); 
+  }
+
+  .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-media-col {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.btn-sound {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--accent-red);
+    border-color: var(--accent-red);
+    transform: scale(1.1);
+  }
+}

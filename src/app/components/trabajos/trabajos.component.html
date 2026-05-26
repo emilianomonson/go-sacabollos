@@ -1,0 +1,43 @@
+<section class="trabajos-section" id="trabajos">
+  <div class="container">
+    
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">TRABAJOS <span class="highlight">REALIZADOS</span></h2>
+      <p class="section-subtitle">Resultados impecables. Desliza o toca la imagen para ver la restauración.</p>
+    </div>
+
+    <div class="grid-trabajos">
+      
+      <div class="card-trabajo" 
+           *ngFor="let trabajo of trabajos; let i = index"
+           [class.activo]="trabajo.activo"
+           (click)="toggleResultado(trabajo)"
+           data-aos="zoom-in" 
+           [attr.data-aos-delay]="(i + 1) * 100">
+        
+        <div class="img-container">
+          <img [src]="trabajo.despues" alt="Acabado final" class="img-after">
+          <img [src]="trabajo.antes" alt="Daño original" class="img-before">
+          
+          <div class="badge-status" [class.badge-activo]="trabajo.activo">
+            {{ trabajo.activo ? 'Acabado Final' : 'Toca para ver' }}
+          </div>
+        </div>
+
+        <div class="trabajo-info">
+          <h3>{{ trabajo.titulo }}</h3>
+          <p>{{ trabajo.desc }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="btn-container" data-aos="fade-up" data-aos-delay="400">
+      <a href="https://www.instagram.com/sacabollos.go" target="_blank" class="btn-outline-red">
+        <i class="fa-brands fa-instagram"></i> VER MÁS EN INSTAGRAM
+      </a>
+    </div>
+
+  </div>
+</section>

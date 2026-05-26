@@ -1,0 +1,33 @@
+<section class="hero-section" id="inicio">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-container">
+    
+    <div class="hero-text-col" data-aos="fade-right">
+      <h1 class="hero-title">GO <span class="highlight">SACABOLLOS</span></h1>
+      <p class="hero-subtitle">
+        Especialistas en estética vehicular y reparación de granizo. 
+        Restauramos la línea de tu vehículo manteniendo la pintura original de fábrica.
+      </p>
+      <div class="hero-actions">
+        <a href="#presupuesto" class="btn-solid-red">COTIZAR AHORA</a>
+        <a href="#trabajos" class="btn-outline">VER TRABAJOS</a>
+      </div>
+    </div>
+
+    <div class="hero-media-col" data-aos="fade-left" data-aos-delay="200">
+      <div class="hero-video-wrapper">
+        
+        <video src="/reel-home.mp4" autoplay loop [muted]="isMuted" playsinline class="hero-video"></video>
+        
+        <button class="btn-sound" (click)="toggleSound($event)">
+          <i class="fa-solid" [ngClass]="isMuted ? 'fa-volume-xmark' : 'fa-volume-high'"></i>
+        </button>
+
+        <div class="video-accent top-left"></div>
+        <div class="video-accent bottom-right"></div>
+      </div>
+    </div>
+
+  </div>
+</section>

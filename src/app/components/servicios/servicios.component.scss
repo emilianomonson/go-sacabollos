@@ -1,0 +1,86 @@
+.servicios-section {
+  padding: 120px 0;
+  background-color: var(--bg-dark); /* Asegura la continuidad del fondo oscuro */
+  position: relative;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-title {
+  /* Tipografía fluida para el título de sección */
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+
+  .highlight {
+    color: var(--accent-red);
+  }
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Grid CSS: Distribuye las tarjetas automáticamente sin media queries complejas */
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card-servicio {
+  background-color: var(--bg-card); /* #151515 */
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+
+  /* Efecto futurista de neón en hover */
+  &:hover {
+    transform: translateY(-10px);
+    border-color: rgba(230, 0, 0, 0.5); /* El borde se pinta de rojo sutil */
+    box-shadow: 0 10px 30px rgba(230, 0, 0, 0.15); /* Resplandor rojo debajo */
+
+    .icon-wrapper i {
+      transform: scale(1.1);
+      text-shadow: 0 0 15px rgba(230, 0, 0, 0.8);
+    }
+  }
+
+  .icon-wrapper {
+    margin-bottom: 25px;
+
+    i {
+      font-size: 3.5rem;
+      color: var(--accent-red);
+      transition: all 0.3s ease;
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}

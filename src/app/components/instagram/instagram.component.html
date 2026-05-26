@@ -1,0 +1,29 @@
+<section class="instagram-section" id="reels">
+  <div class="container">
+    
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="section-title">TRABAJO <span class="highlight">DESTACADO</span></h2>
+      <p class="section-subtitle">Mirá la precisión de nuestro proceso en tiempo real.</p>
+    </div>
+
+    <div class="single-reel-container" data-aos="zoom-in" data-aos-delay="100">
+      <div class="reel-card"
+           (mouseenter)="reproducirVideo(videoPlayer)" 
+           (mouseleave)="pausarVideo(videoPlayer)">
+        
+        <video #videoPlayer src="/reel1.mp4" loop [muted]="isMuted" playsinline preload="metadata" class="reel-video"></video>
+        
+        <button class="btn-sound" (click)="toggleSound($event)">
+          <i class="fa-solid" [ngClass]="isMuted ? 'fa-volume-xmark' : 'fa-volume-high'"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="btn-container" data-aos="fade-up" data-aos-delay="300">
+      <a [href]="instagramUrl" target="_blank" class="btn-outline-red">
+        <i class="fa-brands fa-instagram"></i> SEGUINOS EN INSTAGRAM
+      </a>
+    </div>
+
+  </div>
+</section>
